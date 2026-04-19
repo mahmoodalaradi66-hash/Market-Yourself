@@ -1,0 +1,59 @@
+/* ============================================================
+   PORTFOLIO — GRADIENT VERSION
+   styling-gradient.css
+   Import this INSTEAD of styling.css on each page to get
+   the gradient background. Everything else is identical.
+   ============================================================ */
+
+/* Pull in all the base styles first */
+@import url('styling.css');
+
+/* Override background variables */
+:root {
+  --bg:  #f0ebff;
+  --bg2: #f8f6ff;
+
+  /* Richer orbs for the gradient version */
+  --orb1: rgba(100,17,255,0.13);
+  --orb2: rgba(139,80,255,0.10);
+  --orb3: rgba(74,11,191,0.08);
+}
+
+/* Gradient body background */
+body {
+  background:
+    radial-gradient(ellipse at 10% 0%,   rgba(139,80,255,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 100%, rgba(100,17,255,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%,  rgba(74,11,191,0.06)  0%, transparent 70%),
+    linear-gradient(160deg, #f3eeff 0%, #faf8ff 50%, #ede8ff 100%);
+  background-attachment: fixed;
+}
+
+/* Header gets a tinted glass effect */
+header {
+  background: rgba(248,246,255,0.88);
+  border-bottom: 1px solid rgba(100,17,255,0.12);
+}
+
+/* Cards pop more against the tinted bg */
+.card,
+.course-grid,
+.course-grid-3,
+.q-card,
+.t-card {
+  box-shadow: 0 4px 20px rgba(100,17,255,0.10);
+}
+
+/* Body orbs are more vibrant */
+.body-orb-1 {
+  background: radial-gradient(circle, rgba(100,17,255,0.10) 0%, transparent 70%);
+}
+.body-orb-2 {
+  background: radial-gradient(circle, rgba(139,80,255,0.08) 0%, transparent 70%);
+}
+.body-orb-3 {
+  background: radial-gradient(circle, rgba(74,11,191,0.07) 0%, transparent 70%);
+}
+
+/* Edge accent is more opaque on gradient version */
+.page-edge-accent { opacity: 0.6; }

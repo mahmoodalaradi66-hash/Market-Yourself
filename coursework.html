@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmood | Course Work</title>
+  <link rel="stylesheet" href="styling.css">
+  <style>
+
+    /* ── COURSE CARD: text left, video right ── */
+    .course-card {
+      background: var(--card);
+      border-radius: 16px;
+      margin-top: 24px;
+      box-shadow: 0 2px 12px rgba(100,17,255,0.07);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: stretch;
+    }
+
+    /* left accent bar */
+    .course-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+      flex-shrink: 0;
+    }
+
+    /* ── LEFT: text ── */
+    .course-text {
+      flex: 1;
+      padding: 26px 24px 26px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .course-text h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .course-text p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .course-vid-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    /* ── RIGHT: video ── */
+    .course-vid-col {
+      height: 300px;
+      width: 550px;
+      flex-shrink: 0;
+      background: var(--primary);
+      border-radius: 0 16px 16px 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Placeholder when no video yet */
+    .vid-placeholder {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.28);
+      padding: 20px;
+      min-height: 160px;
+    }
+
+    .vid-placeholder-icon { font-size: 28px; opacity: 0.5; }
+    .vid-placeholder-text { font-size: 11px; text-align: center; line-height: 1.5; }
+
+    /* Real video */
+    .course-video {
+      display: block;
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      background: #000;
+      min-height: 0;
+    }
+
+    /* Controls */
+    .vid-controls {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 12px;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .vid-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .vid-btn:hover { background: var(--accent); }
+
+    .vid-progress-wrap {
+      flex: 1;
+      height: 3px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .vid-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+      width: 0%;
+      pointer-events: none;
+    }
+
+    .vid-time {
+      font-size: 10px;
+      color: rgba(255,255,255,0.45);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 780px) {
+      .course-card { flex-direction: column; }
+      .course-vid-col {
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+        min-height: 180px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="body-orbs">
+    <div class="body-orb body-orb-1"></div>
+    <div class="body-orb body-orb-2"></div>
+    <div class="body-orb body-orb-3"></div>
+  </div>
+  <div class="page-edge-accent"></div>
+
+  <header>
+    <a href="index.html" class="header-logo">
+      <span class="header-logo-text">MJ <span>·</span> E <span>·</span> Portfolio</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="coursework.html" class="active">Course Work</a>
+      <a href="education.html">Education</a>
+      <a href="achievements.html">Professional Showcase</a>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <div class="orb-field">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="badge-pill">Projects &amp; Work</div>
+    <h2>Course Work</h2>
+    <p>A collection of projects and assignments completed throughout my degree.</p>
+  </section>
+
+  <section class="section">
+
+    <!-- ── WEB FUNDAMENTALS ── -->
+    <div class="course-card">
+      <div class="course-text">
+        <div class="course-vid-label">Web Fundamentals</div>
+        <h3>Web Fundamentals</h3>
+        <p>To introduce students to the fundamental of Web Design and Implementation. Created responsive websites using HTML, CSS, and Bootstrap.</p>
+      </div>
+      <div class="course-vid-col" id="col-wf">
+        <!-- PLACEHOLDER — replace with video element when ready:
+             <video class="course-video" id="vid-wf" src="./videos/web-fundamentals.mp4" preload="metadata"></video>
+             then show the controls div and call initVid('wf') in initAll() -->
+            <video class="course-video" id="vid-wf" src="./images/webfund.mov" preload="metadata"></video>
+        <div class="vid-controls" id="ctrl-wf">
+          <button class="vid-btn" id="play-wf" onclick="togglePlay('wf')" title="Play / Pause">&#9654;</button>
+          <div class="vid-progress-wrap" onclick="seekVid('wf', event)">
+            <div class="vid-progress-fill" id="fill-wf"></div>
+          </div>
+          <span class="vid-time" id="time-wf">0:00 / 0:00</span>
+          <button class="vid-btn" id="mute-wf" onclick="toggleMute('wf')" title="Mute / Unmute">&#128266;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SYSTEM ANALYSIS AND DESIGN ── -->
+    <div class="course-card">
+      <div class="course-text">
+        <div class="course-vid-label">System Analysis and Design</div>
+        <h3>System Analysis and Design</h3>
+        <p>To develop student's abilities to analyse simple and complex information systems, model business and systems requirements, and document logical and physical design solutions by using appropriate methods, techniques, tools and industry standards.</p>
+      </div>
+      <div class="course-vid-col" id="col-sad">
+        <video class="course-video" id="vid-sad" src="./images/sad.mov" preload="metadata"></video>
+        <div class="vid-controls" id="ctrl-sad">
+          <button class="vid-btn" id="play-sad" onclick="togglePlay('sad')" title="Play / Pause">&#9654;</button>
+          <div class="vid-progress-wrap" onclick="seekVid('sad', event)">
+            <div class="vid-progress-fill" id="fill-sad"></div>
+          </div>
+          <span class="vid-time" id="time-sad">0:00 / 0:00</span>
+          <button class="vid-btn" id="mute-sad" onclick="toggleMute('sad')" title="Mute / Unmute">&#128266;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── NETWORKS AND DATA COMMUNICATIONS ── -->
+    <div class="course-card">
+      <div class="course-text">
+        <div class="course-vid-label">Networks and Data Communications</div>
+        <h3>Networks and Data Communications</h3>
+        <p>To provide students with an understanding of Computer Networking and the practical skills to implement and troubleshoot small to medium computer networks. Students will configure networks and manage the routers, and be introduced to the fundamental building blocks of a communication system and a variety of networking technologies.</p>
+      </div>
+      <div class="course-vid-col" id="col-net">
+        <video class="course-video" id="vid-net" src="./images/networking.mov" preload="metadata"></video>
+        <div class="vid-controls" id="ctrl-net">
+          <button class="vid-btn" id="play-net" onclick="togglePlay('net')" title="Play / Pause">&#9654;</button>
+          <div class="vid-progress-wrap" onclick="seekVid('net', event)">
+            <div class="vid-progress-fill" id="fill-net"></div>
+          </div>
+          <span class="vid-time" id="time-net">0:00 / 0:00</span>
+          <button class="vid-btn" id="mute-net" onclick="toggleMute('net')" title="Mute / Unmute">&#128266;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── INTRODUCTION TO INFORMATION SECURITY ── -->
+    <div class="course-card">
+      <div class="course-text">
+        <div class="course-vid-label">Introduction to Information Security</div>
+        <h3>Introduction to Information Security</h3>
+        <p>To provide students with an understanding of what information security is and its value to modern technology. Students will gain a fundamental knowledge of information security through practical skills and of the security requirements of organisations.</p>
+      </div>
+      <div class="course-vid-col" id="col-sec">
+        <video class="course-video" id="vid-sec" src="./images/info sec.mov" preload="metadata"></video>
+        <div class="vid-controls" id="ctrl-sec" style="display:none;">
+          <button class="vid-btn" id="play-sec" onclick="togglePlay('sec')" title="Play / Pause">&#9654;</button>
+          <div class="vid-progress-wrap" onclick="seekVid('sec', event)">
+            <div class="vid-progress-fill" id="fill-sec"></div>
+          </div>
+          <span class="vid-time" id="time-sec">0:00 / 0:00</span>
+          <button class="vid-btn" id="mute-sec" onclick="toggleMute('sec')" title="Mute / Unmute">&#128266;</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>MJ <span>·</span> E <span>·</span> Portfolio</h3>
+        <p>Mahmood Alaradi · Bachelor of ICT : Programming, Bahrain Polytechnic.</p>
+      </div>
+      <div class="footer-contact-items">
+        <div class="footer-contact-link">
+          <div class="f-icon"><img src="./images/Phone_icon.png" alt="Phone"></div>
+          <span>+973 32114224</span>
+        </div>
+        <div class="footer-contact-link">
+          <div class="f-icon"><img src="./images/email_icon.png" alt="Email"></div>
+          <span>mahmoodalaradi66@gmail.com</span>
+        </div>
+        <a href="https://www.linkedin.com/in/mahmood-alaradi-50738a337/" target="_blank" class="footer-contact-link">
+          <div class="f-icon"><img src="./images/linkedin.png" alt="LinkedIn"></div>
+          <span>Mahmood Jassim</span>
+        </a>
+      </div>
+      <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Back to Top</button>
+    </div>
+    <div class="footer-bottom-bar">&copy; 2026 Mahmood Alaradi &nbsp;·&nbsp; All rights reserved.</div>
+  </footer>
+
+  <script>
+    /*
+      To activate a video slot:
+      1. Put your video file in the project folder (e.g. ./videos/web-fundamentals.mp4)
+      2. In the HTML, REPLACE the <div class="vid-placeholder">...</div> with:
+            <video class="course-video" id="vid-XX" src="./videos/your-file.mp4" preload="metadata"></video>
+      3. On the controls div, remove  style="display:none;"
+      4. In initAll() below, uncomment  initVid('XX');
+    */
+
+    var vids = {};
+
+    function fmt(s) {
+      var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    function initVid(id) {
+      var el = document.getElementById('vid-' + id);
+      if (!el) return;
+      vids[id] = el;
+
+      el.addEventListener('timeupdate', function() {
+        if (el.duration) {
+          document.getElementById('fill-' + id).style.width =
+            (el.currentTime / el.duration * 100) + '%';
+          document.getElementById('time-' + id).textContent =
+            fmt(el.currentTime) + ' / ' + fmt(el.duration);
+        }
+      });
+
+      el.addEventListener('loadedmetadata', function() {
+        document.getElementById('time-' + id).textContent = '0:00 / ' + fmt(el.duration);
+      });
+
+      el.addEventListener('ended', function() {
+        document.getElementById('play-' + id).innerHTML = '&#9654;';
+      });
+
+      document.getElementById('ctrl-' + id).style.display = 'flex';
+    }
+
+    function togglePlay(id) {
+      var el = vids[id]; if (!el) return;
+      var btn = document.getElementById('play-' + id);
+      if (el.paused) { el.play();  btn.innerHTML = '&#9646;&#9646;'; }
+      else           { el.pause(); btn.innerHTML = '&#9654;'; }
+    }
+
+    function toggleMute(id) {
+      var el = vids[id]; if (!el) return;
+      el.muted = !el.muted;
+      document.getElementById('mute-' + id).innerHTML =
+        el.muted ? '&#128263;' : '&#128266;';
+    }
+
+    function seekVid(id, e) {
+      var el = vids[id]; if (!el) return;
+      var rect = e.currentTarget.getBoundingClientRect();
+      el.currentTime = ((e.clientX - rect.left) / rect.width) * el.duration;
+    }
+
+    function initAll() {
+      initVid('wf');
+      initVid('sad');
+      initVid('net');
+      initVid('sec');
+    }
+
+    initAll();
+  </script>
+
+</body>
+</html>

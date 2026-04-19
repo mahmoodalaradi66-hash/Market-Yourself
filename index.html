@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmood | Portfolio</title>
+  <link rel="stylesheet" href="styling.css">
+  <style>
+
+    /* ── PROFILE CARD (split layout) ── */
+    .profile-card {
+      background: var(--card);
+      border-radius: 16px;
+      margin-top: 0;
+      box-shadow: 0 2px 12px rgba(100,17,255,0.07);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    /* left accent bar */
+    .profile-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+    }
+
+    /* ── LEFT: photo + text ── */
+    .profile-left {
+      flex: 1;
+      padding: 28px 28px 28px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .profile-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 4px 14px rgba(100,17,255,0.18);
+      flex-shrink: 0;
+    }
+
+    .profile-greeting h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+
+    .profile-greeting p {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .profile-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    .profile-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .profile-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── RIGHT: video ── */
+    .profile-right {
+      width: 550px; /* to edit video size */
+      flex-shrink: 0;
+      background: var(--primary);
+      border-radius: 0 16px 16px 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-right video {
+      display: block;
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      background: #000;
+      min-height: 0;
+    }
+
+    .vid-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .vid-btn {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      border-radius: 7px;
+      color: white;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .vid-btn:hover { background: var(--accent); }
+
+    .vid-progress-wrap {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .vid-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      width: 0%;
+      pointer-events: none;
+    }
+
+    .vid-time {
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .profile-card { flex-direction: column; }
+      .profile-right {
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+        min-height: 220px;
+      }
+      .profile-right video { max-height: 220px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="body-orbs">
+    <div class="body-orb body-orb-1"></div>
+    <div class="body-orb body-orb-2"></div>
+    <div class="body-orb body-orb-3"></div>
+  </div>
+  <div class="page-edge-accent"></div>
+
+  <header>
+    <a href="index.html" class="header-logo">
+      <span class="header-logo-text">MJ <span>·</span> E <span>·</span> Portfolio</span>
+    </a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="coursework.html">Course Work</a>
+      <a href="education.html">Education</a>
+      <a href="achievements.html">Professional Showcase</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="orb-field">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="orb orb-4"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h2>Hello, I'm <span>Mahmood</span></h2>
+        <p>I am a Programming student specializing in creating modern, responsive and user-friendly websites using HTML, CSS, JavaScript and Bootstrap.</p>
+        <a href="education.html" class="btn-purple">View My Education</a>
+        &nbsp;
+        <a href="coursework.html" class="btn-outline-purple">Course Work</a>
+      </div>
+      <img src="./images/profile2.png" alt="Mahmood" class="hero-img">
+    </div>
+  </section>
+
+  <!-- PERSONAL PROFILE CARD -->
+  <section class="section">
+    <h2>Personal Profile</h2>
+
+    <div class="profile-card">
+
+      <!-- LEFT: photo + greeting + text -->
+      <div class="profile-left">
+        <div class="profile-top">
+          <img src="./images/profile2.png" alt="Mahmood" class="profile-photo">
+          <div class="profile-greeting">
+            <h3>Hello, I'm Mahmood Jassim</h3>
+            <p>Programming Student · Bahrain Polytechnic</p>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <div>
+          <div class="profile-section-label">Personal Profile</div>
+          <p class="profile-text">
+            I am currently studying Programming at Bahrain Polytechnic, focusing on web development.
+            My interests include front-end design, UI/UX, and building interactive web applications.
+            I'm passionate about creating clean, user-friendly digital experiences and continuously growing my skills across HTML, CSS, JavaScript, Bootstrap, and beyond.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT: personal profile video -->
+      <div class="profile-right">
+        <video id="profileVid"
+               src="./images/personal profile final version.mp4"
+               preload="metadata">
+        </video>
+        <div class="vid-controls">
+          <button class="vid-btn" id="playBtn" onclick="togglePlay()" title="Play / Pause">&#9654;</button>
+          <div class="vid-progress-wrap" onclick="seekVideo(event)">
+            <div class="vid-progress-fill" id="progressFill"></div>
+          </div>
+          <span class="vid-time" id="vidTime">0:00 / 0:00</span>
+          <button class="vid-btn" id="muteBtn" onclick="toggleMute()" title="Mute / Unmute">&#128266;</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>MJ <span>·</span> E <span>·</span> Portfolio</h3>
+        <p>Mahmood Alaradi · Bachelor of ICT : Programming, Bahrain Polytechnic.</p>
+      </div>
+      <div class="footer-contact-items">
+        <div class="footer-contact-link">
+          <div class="f-icon"><img src="./images/Phone_icon.png" alt="Phone"></div>
+          <span>+973 32114224</span>
+        </div>
+        <div class="footer-contact-link">
+          <div class="f-icon"><img src="./images/email_icon.png" alt="Email"></div>
+          <span>mahmoodalaradi66@gmail.com</span>
+        </div>
+        <a href="https://www.linkedin.com/in/mahmood-alaradi-50738a337/" target="_blank" class="footer-contact-link">
+          <div class="f-icon"><img src="./images/linkedin.png" alt="LinkedIn"></div>
+          <span>Mahmood Jassim</span>
+        </a>
+      </div>
+      <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Back to Top</button>
+    </div>
+    <div class="footer-bottom-bar">&copy; 2026 Mahmood Alaradi &nbsp;·&nbsp; All rights reserved.</div>
+  </footer>
+
+  <script>
+    var vid      = document.getElementById('profileVid');
+    var playBtn  = document.getElementById('playBtn');
+    var muteBtn  = document.getElementById('muteBtn');
+    var fill     = document.getElementById('progressFill');
+    var timeEl   = document.getElementById('vidTime');
+
+    function fmt(s) {
+      var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+      return m + ':' + (sec < 10 ? '0' : '') + sec;
+    }
+
+    function togglePlay() {
+      if (vid.paused) { vid.play();  playBtn.innerHTML = '&#9646;&#9646;'; }
+      else            { vid.pause(); playBtn.innerHTML = '&#9654;'; }
+    }
+
+    function toggleMute() {
+      vid.muted = !vid.muted;
+      muteBtn.innerHTML = vid.muted ? '&#128263;' : '&#128266;';
+    }
+
+    function seekVideo(e) {
+      var rect = e.currentTarget.getBoundingClientRect();
+      vid.currentTime = ((e.clientX - rect.left) / rect.width) * vid.duration;
+    }
+
+    vid.addEventListener('timeupdate', function() {
+      if (vid.duration) {
+        fill.style.width = (vid.currentTime / vid.duration * 100) + '%';
+        timeEl.textContent = fmt(vid.currentTime) + ' / ' + fmt(vid.duration);
+      }
+    });
+    vid.addEventListener('ended',           function() { playBtn.innerHTML = '&#9654;'; });
+    vid.addEventListener('loadedmetadata',  function() { timeEl.textContent = '0:00 / ' + fmt(vid.duration); });
+  </script>
+
+</body>
+</html>

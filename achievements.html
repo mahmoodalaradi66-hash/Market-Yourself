@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmood | Professional Showcase</title>
+  <link rel="stylesheet" href="styling.css">
+  <style>
+    .popup-open-hint {
+      margin-top: 10px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.48);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="body-orbs">
+    <div class="body-orb body-orb-1"></div>
+    <div class="body-orb body-orb-2"></div>
+    <div class="body-orb body-orb-3"></div>
+  </div>
+  <div class="page-edge-accent"></div>
+
+  <header>
+    <a href="index.html" class="header-logo">
+      <span class="header-logo-text">MJ <span>·</span> E <span>·</span> Portfolio</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="coursework.html">Course Work</a>
+      <a href="education.html">Education</a>
+      <a href="achievements.html" class="active">Professional Showcase</a>
+    </nav>
+  </header>
+
+  <section class="page-banner">
+    <div class="orb-field">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="badge-pill">Recognition &amp; Voices</div>
+    <h2>Achievements &amp; Testimonials</h2>
+    <p>Testimonials, Professional Endorsements, and Certificates I Have Earned During My Academic Journey at Bahrain Polytechnic.<br><br>Click any card to view it.</p>
+  </section>
+
+  <section class="section">
+
+    <!-- ── CV & COVER LETTER ── -->
+    <div class="t-divider">
+      <div class="t-pill">CV &amp; Cover Letter</div>
+      <div class="t-line"></div>
+    </div>
+
+    <div class="card">
+      <strong style="color:var(--accent);display:block;">Professional Documents</strong>
+      <p style="margin-top:6px;">My CV and Cover Letter, prepared as part of my Career Development workshop at Bahrain Polytechnic. Click a card to preview, then click the image inside to open it full size.</p>
+    </div>
+    <br>
+
+    <div class="t-grid">
+
+      <div class="t-card" onclick="openDoc('cv_doc')">
+        <img class="t-card-thumb" src="./images/cv.png" alt="CV" style="object-position:top center; aspect-ratio:3/4;">
+        <div class="t-card-footer">
+          <div>
+            <div class="t-card-name">Curriculum Vitae</div>
+            <div class="t-card-role">Professional Document</div>
+          </div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openDoc('cl_doc')">
+        <img class="t-card-thumb" src="./images/cover letter image.png" alt="Cover Letter" style="object-position:top center; aspect-ratio:3/4;">
+        <div class="t-card-footer">
+          <div>
+            <div class="t-card-name">Cover Letter</div>
+            <div class="t-card-role">Professional Document</div>
+          </div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── TUTORS & LECTURERS ── -->
+    <div class="t-divider">
+      <div class="t-pill">Tutors &amp; Lecturers</div>
+      <div class="t-line"></div>
+    </div>
+
+    <div class="card">
+      <strong style="color:var(--accent);display:block;">Testimonials From Tutors</strong>
+      <p style="margin-bottom:4px;margin-top:4px;">This section presents testimonials and recommendation letters from my tutors, highlighting my active participation, academic development, and continuous growth over the semesters.</p>
+      <p><b> Ms Fatema Sadri Quote:</b> &nbsp;"Mahmood is an extremely hard-working and determined student who approaches every task with enthusiasm. He shows eagerness to learn and strives to improve his understanding of the subject."</p>
+    </div>
+    <br>
+
+    <div class="t-grid">
+
+      <div class="t-card" onclick="openItem('fatema')">
+        <img class="t-card-thumb" src="./images/better format/Fatema.jpg" alt="Fatema Sadri">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Ms. Fatema Sadri</div><div class="t-card-role">Lecturer</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('fatema_letter')">
+        <img class="t-card-thumb pos-top" src="./images/testimonies/WhatsApp Image 2026-03-30 at 19.04.05.jpeg" alt="Fatema Sadri letter">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Ms. Fatema Sadri</div><div class="t-card-role">Lecturer · Letter</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('abf')">
+        <img class="t-card-thumb pos-top" src="./images/better format/ABF.jpg" alt="Dr. ABF">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Dr. Abdelhameed Fawzy</div><div class="t-card-role">Lecturer</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('daylami')">
+        <img class="t-card-thumb pos-top" src="./images/better format/daylami.jpg" alt="Dr. Daylami">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Dr. Mohammed Daylami</div><div class="t-card-role">Mentor</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('hamed')">
+        <img class="t-card-thumb pos-top" src="./images/better format/hamed.jpg" alt="Hamed">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Mr. Hamed</div><div class="t-card-role">Lecturer</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('nedhal')">
+        <img class="t-card-thumb" src="./images/better format/nedhal.jpg" alt="Nedhal">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Ms. Nedhal</div><div class="t-card-role">Lecturer</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── COLLEAGUES ── -->
+    <div class="t-divider">
+      <div class="t-pill">Colleagues</div>
+      <div class="t-line"></div>
+    </div>
+
+    <div class="card">
+      <strong style="color:var(--accent);display:block;">Testimonials From Colleagues</strong>
+      <p style="margin-bottom:4px;margin-top:4px;">The following testimonials reflect feedback from my colleagues and group members, highlighting my teamwork, communication, and collaborative contributions across various projects.</p>
+      <p><b>A.Samad Shehab Quote:</b> &nbsp;"Mahmood's greatest strength has always been his punctuality, with him creating schedules and timetables for all of our members to follow with attention to our own personal circumstances and schedules."</p>
+    </div>
+    <br>
+
+    <div class="t-grid">
+
+      <div class="t-card" onclick="openItem('ab')">
+        <img class="t-card-thumb" src="./images/better format/Ab.jpg" alt="Ab">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">A.Samad Shehab</div><div class="t-card-role">Colleague</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('ebrahim')">
+        <img class="t-card-thumb" src="./images/better format/Ebrahim.jpg" alt="Ebrahim Ali">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Ebrahim Ali</div><div class="t-card-role">Colleague</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('hussain')">
+        <img class="t-card-thumb" src="./images/better format/hussain ali.jpg" alt="Hussain Ali">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Hussain Ali</div><div class="t-card-role">Colleague</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('hadi')">
+        <img class="t-card-thumb" src="./images/better format/hadi.jpg" alt="Hadi Abbas">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Hadi Abbas</div><div class="t-card-role">Colleague</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── CERTIFICATES ── -->
+    <div class="t-divider">
+      <div class="t-pill">Certificates</div>
+      <div class="t-line"></div>
+    </div>
+
+    <div class="card">
+      <strong style="color:var(--accent);display:block;">Academic Skills Centre</strong>
+      <p style="margin-bottom:4px;margin-top:4px;">These certificates were earned through my participation in workshops at the Academic Skills Centre at Bahrain Polytechnic, covering topics ranging from career development to intrapreneurship.</p>
+      <p><b>Dr. Mohammed Daylami Quote:</b> &nbsp;"Mahmood actively participated in workshops and demonstrated strong communication and presentation skills. His contributions to the discussions were valuable and helped make the workshops engaging and interactive for other participants."</p>
+    </div>
+    <br>
+
+    <div class="t-grid">
+
+      <div class="t-card" onclick="openItem('carrer')">
+        <img class="t-card-thumb cert" src="./images/better format/carrer.jpg" alt="Career Certificate">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Major & Career Path</div><div class="t-card-role">Certificate</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('comm')">
+        <img class="t-card-thumb cert" src="./images/better format/comm.jpg" alt="Communication Certificate">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Presentation & Communication Skills</div><div class="t-card-role">Certificate</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('cv_cert')">
+        <img class="t-card-thumb cert" src="./images/better format/cv.jpg" alt="CV Certificate">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">CV & Interview preparations </div><div class="t-card-role">Certificate</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+      <div class="t-card" onclick="openItem('intra')">
+        <img class="t-card-thumb cert" src="./images/better format/intra.jpg" alt="Intrapreneurship Certificate">
+        <div class="t-card-footer">
+          <div><div class="t-card-name">Intrapreneurship & Problem Solving & Creativity </div><div class="t-card-role">Certificate</div></div>
+          <span class="t-card-hint">View →</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>MJ <span>·</span> E <span>·</span> Portfolio</h3>
+        <p>Mahmood Alaradi · Bachelor of ICT : Programming, Bahrain Polytechnic.</p>
+      </div>
+      <div class="footer-contact-items">
+        <div class="footer-contact-link">
+          <div class="f-icon"><img src="./images/Phone_icon.png" alt="Phone"></div>
+          <span>+973 32114224</span>
+        </div>
+        <div class="footer-contact-link">
+          <div class="f-icon"><img src="./images/email_icon.png" alt="Email"></div>
+          <span>mahmoodalaradi66@gmail.com</span>
+        </div>
+        <a href="https://www.linkedin.com/in/mahmood-alaradi-50738a337/" target="_blank" class="footer-contact-link">
+          <div class="f-icon"><img src="./images/linkedin.png" alt="LinkedIn"></div>
+          <span>Mahmood Jassim</span>
+        </a>
+      </div>
+      <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Back to Top</button>
+    </div>
+    <div class="footer-bottom-bar">&copy; 2026 Mahmood Alaradi &nbsp;·&nbsp; All rights reserved.</div>
+  </footer>
+
+  <!-- ══ TESTIMONY/CERTIFICATE POPUP (no new tab) ══ -->
+  <div class="t-popup-overlay" id="itemOverlay" onclick="overlayClick(event)">
+    <div class="t-popup-card" id="itemPopupCard">
+      <div class="t-popup-head">
+        <button class="t-popup-close" onclick="closeItem(event)">&#10005;</button>
+        <h3 id="itemName"></h3>
+        <p id="itemRole"></p>
+      </div>
+      <div class="t-popup-img-wrap">
+        <img id="itemImg" src="" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ DOC POPUP (CV / Cover Letter — click image → new tab) ══ -->
+  <div class="t-popup-overlay" id="docOverlay" onclick="docOverlayClick(event)">
+    <div class="t-popup-card" id="docPopupCard">
+      <div class="t-popup-head">
+        <button class="t-popup-close" onclick="closeDoc(event)">&#10005;</button>
+        <h3 id="docName"></h3>
+        <p id="docRole"></p>
+        <div class="popup-open-hint">&#8599; Click the image to open full size in a new tab</div>
+      </div>
+      <div class="t-popup-img-wrap">
+        <img id="docImg" src="" alt=""
+             style="cursor:pointer;"
+             onclick="openDocNewTab()">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var items = {
+      fatema:        { name:'Ms. Fatema Sadri',        role:'Lecturer',          img:'./images/better format/Fatema.jpg' },
+      fatema_letter: { name:'Ms. Fatema Sadri',        role:'Lecturer · Letter', img:'./images/testimonies/WhatsApp Image 2026-03-30 at 19.04.05.jpeg' },
+      abf:           { name:'Dr. Abdelhameed Fawzy',   role:'Lecturer',          img:'./images/better format/ABF.jpg' },
+      daylami:       { name:'Dr. Mohammed Daylami',    role:'Mentor',            img:'./images/better format/daylami.jpg' },
+      hamed:         { name:'Mr. Hamed',               role:'Lecturer',          img:'./images/better format/hamed.jpg' },
+      nedhal:        { name:'Ms. Nedhal',              role:'Lecturer',          img:'./images/better format/nedhal.jpg' },
+      ab:            { name:'A.Samad Shehab',          role:'Colleague',         img:'./images/better format/Ab.jpg' },
+      hussain:       { name:'Hussain Ali',             role:'Colleague',         img:'./images/better format/hussain ali.jpg' },
+      hadi:          { name:'Hadi Abbas',              role:'Colleague',         img:'./images/better format/hadi.jpg' },
+      ebrahim:       { name:'Ebrahim Ali',             role:'Colleague',         img:'./images/better format/Ebrahim.jpg' },
+      carrer:        { name:'Career Development',      role:'Certificate',       img:'./images/better format/carrer.jpg' },
+      comm:          { name:'Communication Skills',    role:'Certificate',       img:'./images/better format/comm.jpg' },
+      cv_cert:       { name:'CV Writing',              role:'Certificate',       img:'./images/better format/cv.jpg' },
+      intra:         { name:'Intrapreneurship',        role:'Certificate',       img:'./images/better format/intra.jpg' }
+    };
+
+    var docs = {
+      cv_doc: { name:'Curriculum Vitae', role:'Professional Document', img:'./images/cv.png' },
+      cl_doc: { name:'Cover Letter',     role:'Professional Document', img:'./images/cover letter image.png' }
+    };
+
+    var currentDocImg = '';
+
+    function openItem(key) {
+      var d = items[key]; if (!d) return;
+      document.getElementById('itemName').textContent = d.name;
+      document.getElementById('itemRole').textContent = d.role;
+      document.getElementById('itemImg').src = d.img;
+      document.getElementById('itemImg').alt = d.name;
+      document.getElementById('itemOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeItem(e) {
+      e.stopPropagation();
+      document.getElementById('itemOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function overlayClick(e) {
+      if (e.target === document.getElementById('itemOverlay')) {
+        document.getElementById('itemOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openDoc(key) {
+      var d = docs[key]; if (!d) return;
+      currentDocImg = d.img;
+      document.getElementById('docName').textContent = d.name;
+      document.getElementById('docRole').textContent = d.role;
+      document.getElementById('docImg').src = d.img;
+      document.getElementById('docImg').alt = d.name;
+      document.getElementById('docOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDoc(e) {
+      e.stopPropagation();
+      document.getElementById('docOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function docOverlayClick(e) {
+      if (e.target === document.getElementById('docOverlay')) {
+        document.getElementById('docOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openDocNewTab() {
+      if (currentDocImg) window.open(currentDocImg, '_blank');
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('itemOverlay').classList.remove('open');
+        document.getElementById('docOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
